@@ -8,7 +8,7 @@
  * У новых элементов rss время публикации больше больше времени 
  * сохраненного в rss-last-timestamp.txt.
  * 
- * Лог рассылок rss-mailing.log
+ * Лог рассылок находится в rss-mailing.log
  *
  */
 
@@ -42,6 +42,7 @@ foreach ($rss->channel->item as $item){
         $mail_body .= render($id, $pubDate, $title, $link);
     }
 }
+// Если новых записей нет выходим
 if ($mail_body == "") exit;
 
 
